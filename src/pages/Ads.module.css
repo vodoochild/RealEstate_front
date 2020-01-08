@@ -1,8 +1,6 @@
 .Ads{
-    margin: 30px;
-}
-
-  
+    margin: 40px;
+}  
 .carimg{
     width: 400px;
     height:300px;
@@ -29,9 +27,7 @@
     -ms-transform:translate(0, -50%);
     transform:translate(0, -50%);
 }
-.retrievedata{
 
-}
 .cardim{
     width:400px ;
 }
@@ -39,4 +35,14 @@
     display: flex;
    padding: 10px;
    margin-left: 60px;
+   flex-wrap: wrap;
 }
+.container>div {
+    flex: 0 50%;
+    /*demo*/
+    box-sizing:border-box
+  }
+  .dims{
+      width:1284 px ;
+      height:711px ;
+  }

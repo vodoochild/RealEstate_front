@@ -10,6 +10,8 @@ export const Entete = () => {
         <div>
             <Navbar color="faded" light>
         <NavbarBrand href="/" className="mr-auto">LOGO D'ENTREPRISE</NavbarBrand>
+        <NavbarBrand href="/" >LOG OUT</NavbarBrand>
+
         <NavbarToggler onClick={toggleNavbar} className="mr-2" />
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
@@ -20,7 +22,7 @@ export const Entete = () => {
               <NavLink href="/NewAd">Nouvelle Annonce</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Ads">Dashboard</NavLink>
+              <NavLink href="/Dashboard">Dashboard</NavLink>
             </NavItem>
           </Nav>
         </Collapse>

@@ -4,7 +4,7 @@ import styles from './Ads.module.css'
 
 export default class NewAd extends Component {
     render() {
-        return (<div  ><Ad/></div>
+        return (<div className={styles.Ads}><Ad/></div>
         )
     }
 }
