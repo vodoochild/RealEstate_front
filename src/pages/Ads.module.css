@@ -46,3 +46,10 @@
       width:1284 px ;
       height:711px ;
   }
+  /*i started modifying from here */
+  .adDetails{
+      font: 1em sans-serif;
+      font-size: medium;
+      font-style: normal;
+      font-weight: bold;
+  }

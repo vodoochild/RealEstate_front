@@ -14,10 +14,10 @@ import Dashboard from './pages/Dashboard';
 const App: React.FC = () => {
   return (
     <>
-    <Entete />
+  
     <BrowserRouter>
     <Switch>
-      <Route exact path="/" component={UserHome}/>
+      {/*<Route path="/" component={Home}/>*/}
       <Route exact path="/Ads" component={Ads} />
       <Route exact path="/Dashboard" component ={Dashboard} />
       <Route exact path="/NewAd" component={NewAd}/>

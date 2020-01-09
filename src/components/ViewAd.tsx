@@ -20,6 +20,7 @@ import { Title } from 'react-bootstrap/lib/Modal'
          ville:string;
          adresse:string;
          Ad_date:string;
+         date_disponibilite:string;
          proprietaire:{
             nom:string;
             email:string;
@@ -28,12 +29,15 @@ import { Title } from 'react-bootstrap/lib/Modal'
          bien:{
            type:string;
            surface:number;
-           description:string
+           description:string;
+           prix:number;
+          nb_pieces:number;
          },
         photos: image[]
       
      }
      onDeleted():void
+     onModified():void
  };
 
 const ViewAd = (props:Props)=> {
@@ -99,17 +103,32 @@ const ViewAd = (props:Props)=> {
   <Collapse isOpen={isOpen}>
     <Card className={styles.cardim}>
       <CardBody>
-    <div>Titre annonce {ad.titre}</div>    
-    <div>Client {ad.proprietaire?.nom}</div>
-    <div>type du local {ad.bien?.type}</div>
-    <div>Etat {ad.etat}</div>
-    <div>city {ad.ville}</div>
-    <div>Adresse {ad.adresse}</div>
-    <div>la date de la publication {ad?.Ad_date}</div>
+        <div className={styles.adDetails}>
+    <div>Titre annonce: {ad.titre}</div>  
+    <div>Type d'annonce: {ad.type_annonce} </div>  
+    <div>Client: {ad.proprietaire?.nom}</div>
+    <div>type du local: {ad.bien?.type}</div>
+    <div>Surface: {ad.bien.surface}</div>
+    <div>Nombre de pieces: {ad.bien.nb_pieces}</div>
+    <div>Description: {ad.bien.description}</div>
+    <div>Prix: {ad.bien.prix}</div>
+    <div>la date de disponibilité: {ad?.date_disponibilite}</div>
+    <div>Etat: {ad.etat}</div>
+    <div>city: {ad.ville}</div>
+    <div>Adresse: {ad.adresse}</div>
+    </div>
       </CardBody>
     </Card>
   </Collapse><br/>
-  <Button style={{marginLeft:'2rem' }}>Changer etat</Button>
+  <Button style={{marginLeft:'2rem' }} onClick={()=>{
+    return fetch('http://localhost:3000/annonce/changerEtat/'+ad.id+'/'+ad.etat,{
+      method: "POST",
+      headers:{
+        'Content-type' :'application/json'
+      },
+      body: JSON.stringify({ id: ad.id,etat:ad.etat })
+    }).then(() => {props.onModified();});
+  }}>Changer etat</Button>
  {/* <Button style={{marginLeft:'5rem' }}onClick={() => {
      if (window.confirm('Are you sure you wish to delete this ad?')) 
     {return fetch('http://localhost:3000/annonce/DeleteAnnonce/'+ad.id, {

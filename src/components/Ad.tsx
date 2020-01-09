@@ -54,9 +54,10 @@ export default class Ad extends Component<Props,State> {
         Promise.all(p).then((files) => {
           let valuesToSend = {
             titre: values.titre,
-            type:values.type_annonce,
+            etat:values.etat,
+            type_annonce:values.type_annonce,
             date_disponibilite:values.date,
-            agent:{id:5,},
+            agent:{id:1,},
           
             proprietaire: {
               nom: values.nom,
@@ -89,7 +90,7 @@ export default class Ad extends Component<Props,State> {
         {({setFieldValue}) =>(
           <div className={styles.dims}>
             <Alert color="info" isOpen={this.state.isSent} toggle={toggle}>
-      I am an alert and I can be dismissed!
+      Annonce enregistée!
     </Alert>
           <Form>
             <Row form>
@@ -218,7 +219,7 @@ export default class Ad extends Component<Props,State> {
             </Col>
             <Col>
             <FormGroup row>
-              <Label for="NomProjet" sm={2}>Type</Label>
+              <Label for="NomProjet" sm={2}>etat</Label>
               <Col sm={6}>
                 <Input tag={Field} as="select" type="select" name="etat"  required >
                 <option>cloturée</option>
@@ -234,7 +235,7 @@ export default class Ad extends Component<Props,State> {
         <InputGroup>
           <Input tag={Field} type="textarea" name="montant" id="montant" />
           <InputGroupAddon addonType="append">
-          <InputGroupText>Dhs</InputGroupText>
+          <InputGroupText>MAD</InputGroupText>
           </InputGroupAddon>
           </InputGroup>
         </Col>
