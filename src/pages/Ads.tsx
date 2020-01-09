@@ -25,7 +25,7 @@ export default class Ads extends Component<Props,State> {
         
     }
     getAds() {
-        fetch('http://localhost:3000/annonce/annoncesByAgent/1')
+        fetch('http://localhost:3000/annonce/annoncesByAgent/'+localStorage.getItem("agent_id"))
         .then((result) => result.json())
         .then((info) => {
             console.log(info);
@@ -43,10 +43,10 @@ export default class Ads extends Component<Props,State> {
            )
        })
             return (
-            
+
               <div>
            <Entete/>
-            <div className={styles.placingAds}> 
+            <div className={styles.placingAds}>
             {myads}
             </div> 
             <Modal isOpen={this.state.modified} toggle={toggle}>
@@ -59,7 +59,7 @@ export default class Ads extends Component<Props,State> {
         </ModalFooter>
       </Modal>
       </div>
-           
+
         );
     }
 }

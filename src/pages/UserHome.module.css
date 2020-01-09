@@ -1,13 +1,15 @@
 .Home{
     background-image: url("realesate.png");
     height: 540px;
+    width: 100%;
     background-size: cover;
-    background-position: center;
+    /*background-position: center;*/
     font-size: 100%;
     vertical-align: baseline;
     outline: none;
     line-height: 19.2px;
     font-weight: 400;
+    margin: fill;
 
 }
 .titleBgWhite{
@@ -60,14 +62,16 @@
     vertical-align: baseline;
 }
 .HomepageSearch{
+    margin: fill;
     position: relative;
+    width: 100%;
     box-sizing: inherit;
     display: block;
     border-image-repeat:stretch;
     border-image-slice: 100%;
     border-image-source: none;
-    border-image-width: 1;
-    box-sizing: border-box;
+    /*border-image-width: 1;*/
+    /*box-sizing: border-box;*/
     font-size: 16px;
     font-stretch: 100%;
     font-weight: 400px;

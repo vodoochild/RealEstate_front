@@ -57,7 +57,7 @@ export default class Ad extends Component<Props,State> {
             etat:values.etat,
             type_annonce:values.type_annonce,
             date_disponibilite:values.date,
-            agent:{id:1,},
+            agent:{id:localStorage.getItem("agent_id")},
           
             proprietaire: {
               nom: values.nom,
