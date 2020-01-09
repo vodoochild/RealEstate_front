@@ -25,7 +25,7 @@ export default class Ads extends Component<Props,State> {
         
     }
     getAds() {
-        fetch('http://localhost:3000/annonce/annoncesByAgent/'+localStorage.getItem("agent_id"))
+        fetch('http://localhost:3000/annonce/annoncesByAgent/1')
         .then((result) => result.json())
         .then((info) => {
             console.log(info);

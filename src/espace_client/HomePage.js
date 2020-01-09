@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from "./html_elements/Nav";
-import WelcomeView from "./html_elements/WelcomeView";
+//import WelcomeView from "./html_elements/WelcomeView";
 import Property from "./html_elements/Property";
 import Chercher from "./html_elements/chercher";
 import UserHome from "../pages/UserHome";
